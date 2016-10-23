@@ -24,6 +24,7 @@ function guardarPreguntaBD(){
 	}
 	else{
 		echo '<p>Pregunta almacenada, si desea almacenar otra pregunta <a href="InsertarPregunta.php">pulsa aqui</a>.</p>';
+		echo '<br/><a href="verPreguntasBD.php"> Ver Preguntas BD </a>';
 	}
 
 	mysqli_close($mysqli);
@@ -53,7 +54,8 @@ function guardarPreguntaXML(){
 	
 	$resultado = $xml->asXML('../xml/preguntas.xml');
 	if($resultado == 1){
-		echo 'Pregunta insertada correctamente en preguntas.xml<br/>';
+		echo '<p>Pregunta insertada correctamente en preguntas.xml</p>';
+		echo '<br/><a href="verPreguntasXML.php"> Ver Preguntas XML </a>';
 	}
 	else
 		echo '</p> La pregunta no se ha insertado en el fichero xml correspondiente.</p>';
@@ -117,8 +119,6 @@ function crearFormularioPregunta(){
 						if(isset($_POST['respuesta']) && isset($_POST['pregunta'])){
 							guardarPreguntaBD();
 							guardarPreguntaXML();
-									echo '<br/><a href="verPreguntasXML.php"> Ver Preguntas XML </a>';
-									echo '<br/><a href="verPreguntasBD.php"> Ver Preguntas BD </a>';
 						}
 						else{
 							crearFormularioPregunta();

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once ("funcionalidades.php");
 
 function imprimirPreguntas(){
 	$xml = simplexml_load_file('../xml/preguntas.xml');
@@ -14,6 +15,7 @@ function imprimirPreguntas(){
 		echo '</tr>';
 	}
 	echo '</table>';
+	anadirAccion("ver_preguntas");
 }
 ?>
 
