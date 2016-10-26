@@ -25,7 +25,7 @@ function imprimirPreguntas(){
 <html>
   <head>
 	<?php include('../adds/StyleAndMeta.php'); ?>
-	<title>Inicio</title>
+	<title>verPreguntasXML</title>
   </head>
   <body>
   <div id='page-wrap'>

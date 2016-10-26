@@ -17,6 +17,7 @@ session_start();
 			<div>
 				<?php
 				echo '<br/><a href="verPreguntasXML.php"> Ver Preguntas XML </a>';
+        echo '<br/><a href="../xml/preguntas.xml"> Ver Preguntas XSL </a>';
 				echo '<br/><a href="verPreguntasBD.php"> Ver Preguntas BD </a>';
 				?>
 			</div>

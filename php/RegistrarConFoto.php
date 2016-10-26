@@ -33,8 +33,8 @@ function insertImage(){
 	$uploadOk = 1;
 	$samefile = 0;
 	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-	
-	
+
+
 	if(isset($_POST["submit"])) {
 		$check = getimagesize($_FILES["foto"]["tmp_name"]);
 		if($check !== false) {
@@ -45,7 +45,7 @@ function insertImage(){
 			$uploadOk = 0;
 		}
 	}
-	
+
 	if (file_exists($target_file)) {
 			$samefile = 1;
 	}
@@ -59,12 +59,12 @@ function insertImage(){
 		echo "Solo estan permitidos los archivos de extension JPG, JPEG, PNG & GIF.";
 		$uploadOk = 0;
 	}
-	
+
 
 	if ($uploadOk == 0) {
 		echo "Lo sentimos, tu imagen no se ha podido almacenar en la base de datos.";
 		return;
-		
+
 	}
 	else {
 		if($samefile != 1){
@@ -73,8 +73,9 @@ function insertImage(){
 		}
 		return $target_file;
 	}
-	
+
 }
+
 
 function registrarUser(){
 	$mysqli = conect();
@@ -139,7 +140,7 @@ function registrarUser(){
 	<?php include('../adds/navegation.php'); ?>
     <section class="main" id="s1">
 		<div>
-			<?php 
+			<?php
 				if (!isset($_POST['email'])) {
 					echo 'Fallo, <a href="registro.php">Volver a intentar</a>.';
 				}
